@@ -14,11 +14,11 @@
         </svg>
     </div>
     <section class="one">
-        <h1 class="scrool" data-rate=".4" data-direction="vertical"> Ocean stuff</h1>
+        <h1 class="scroll" data-rate=".4" data-direction="vertical"> Ocean stuff</h1>
     </section>
     <section class="two">
-        <h1 class="scrole">OmG Scroll</h1>
-
+        <h1 class="scroll" data-rate=".2" data-direction="vertical">Omg Scroll</h1>
+        <p>Big Watermark</p>
     </section>
     <script>
         let path = document.querySelector('path')
@@ -35,6 +35,19 @@
             let drawLength = pathLength * scrollPercentage;
             //Draw in reverse
             path.style.strokeDashoffset = pathLength - drawLength;
+    
+            const target = document.querySelectorAll('.scroll');
+            for (let index = 0; index < target.length; index++) {
+                let pos = window.pageYOffset * target[index].dataset.rate;
+                if(target[index].dataset.direction === 'vertical') {
+                    target[index].style.transform = `translate3d(0px,${pos}px,0px)`;
+                }
+                else {
+                    let posY = window.pageYOffset * target[index].dataset.ratex;
+                    let posX = window.pageXOffset * target[index].dataset.ratey;
+                    target[index].style.transform = `translate3d(0px,${posY}px,0px)`;
+                }
+            }
     
         });
     </script>
