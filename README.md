@@ -2,4 +2,4 @@
 Animating SVG image on scroll
 
 ## Demo sandbox ##
-https://codesandbox.io/s/kind-sinoussi-l15i4z
+https://codesandbox.io/s/svg-scroll-animation-r9psbl
